@@ -9,6 +9,5 @@ jobs:
          - uses: actions/setup-python@v3
            with:
             python-version: '3.11'
-         - run: pip install -r req.text
+         - run: pip install -r requirments.text
          - run: python -m unittest discovery
-         
