@@ -1,17 +1,16 @@
-name: Python CI
+name: Python
 
-on: [push, pull_request]
+on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        -   uses: actions/checkout@v3
+        -   uses: actions/setup-python@v3
+            with: 
+              python-version: '3.11'
+        -   run: pip install -r req.txt
 
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-      with:
-        python-version: '3.11'
-    - run: pip install poetry
-    - run: |
-        poetry install
-        poetry run pytest
+        -   run: python -m unittest discover
+
