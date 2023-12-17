@@ -13,6 +13,5 @@ jobs:
         python-version: '3.11'
     - run: pip install poetry
     - run: |
-        cd backend
         poetry install
         poetry run pytest
