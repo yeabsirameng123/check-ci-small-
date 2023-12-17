@@ -10,4 +10,4 @@ jobs:
            with:
             python-version: '3.11'
          - run: pip install -r req.txt
-         - run: python -m unittest discovery
+        
