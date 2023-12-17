@@ -5,9 +5,9 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-         - uses: actions/checkout@v3
-         - uses: actions/setup-python@v3
-           with:
-            python-version: '3.11'
-         - run: pip install -r req.txt
-        
+          - uses: actions/checkout@v3
+          - uses: actions/setup-python@v3
+            with:
+                python-version: '3.11'
+          - run: pip install -r req.txt
+          
