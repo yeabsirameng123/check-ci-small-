@@ -20,8 +20,6 @@ jobs:
                 python-version: '3.11'
           - run: pip install -r req.txt
           - run: pytest
-    deploy:
-        needs: test
-        runs-on: ubuntu-latest
+    
         
 
