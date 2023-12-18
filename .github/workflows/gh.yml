@@ -1,14 +1,27 @@
 name: python
-on: push 
+
+on:
+    push: 
+        branches: ['**']
+    pull_request:
+        branches: ['**']
+
+permissions: 
+    contents: read
 
 jobs:
-    build:
+    test:
         runs-on: ubuntu-latest
+
         steps:
           - uses: actions/checkout@v3
           - uses: actions/setup-python@v3
             with:
                 python-version: '3.11'
           - run: pip install -r req.txt
-          
-            
+          - run: pytest
+    deploy:
+        needs: test
+        runs-on: ubuntu-latest
+        
+
